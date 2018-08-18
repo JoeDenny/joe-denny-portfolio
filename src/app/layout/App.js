@@ -4,7 +4,7 @@ import {
     Container,
 } from "semantic-ui-react";
 
-import TabBarContainer from "./features/tabs/TabBarContainer";
+import TabBarContainer from "features/tabs/TabBar";
 import AboutInfo from "features/about/AboutInfo";
 import Portfolio from "features/portfolio/PortfolioList";
 import ContactDetails from "features/contact/ContactDetails";
@@ -23,7 +23,7 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="App-header">
-                    <Header inverted as="h1">Joe Denny</Header>
+                    <Header as="h1">Joe Denny</Header>
                     <h2 class='ui header'>Web Developer</h2>
                 </div>
                 <Container>
