@@ -5,23 +5,19 @@ import {
 } from "semantic-ui-react";
 
 import TabBarContainer from "./features/tabs/TabBarContainer";
+import AboutInfo from "features/about/AboutInfo";
+import Portfolio from "features/portfolio/PortfolioList";
+import ContactDetails from "features/contact/ContactDetails";
 
 
 import './App.css';
 
-const About = () => <div>About content</div>;
-
-const Portfolio = () => <div>Portfolio content</div>;
-
-const Contact = () => <div>Contact content</div>;
-
-
 class App extends Component {
     render() {
         const tabs = [
-            {name: "about", label: "About", component: About },
+            {name: "about", label: "About", component: AboutInfo },
             {name: "portfolio", label: "Portfolio", component: Portfolio},
-            {name: "contact", label: "Contact", component: Contact},
+            {name: "contact", label: "Contact", component: ContactDetails},
         ];
 
         return (
