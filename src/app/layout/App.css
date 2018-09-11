@@ -1,7 +1,8 @@
 .App {
+  font-family: 'Roboto', 'Open Sans', sans-serif; 
   text-align: center;
+  color: #191919;
 }
-
 .App-header {
   height: 150px;
   padding: 20px;

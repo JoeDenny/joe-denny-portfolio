@@ -1,7 +1,11 @@
 import React from "react";
 
+import { Segment } from 'semantic-ui-react';
+
 const AboutInfo = () => (
-    <div>About Info</div>
+    <Segment>
+        <h2>About Me </h2>
+    </Segment>
 );
 
 export default AboutInfo;

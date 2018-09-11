@@ -1,9 +1,6 @@
-## Joe Denny Portfolio
+## React+Redux
 
 An example React+Redux application
 
-Features
-
-- About me
-- Past projects I've worked on
-- Contact Details
+Features:
+- Hot Module Replacement (HMR) (exchanges, adds, or removes modules while the application is running, without a full reload. This can significantly speed up development.)
