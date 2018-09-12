@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
 
 import {
     Grid,
@@ -6,30 +7,42 @@ import {
     Header,
 } from "semantic-ui-react";
 
+import orm from "app/orm";
 
 import PilotsList from "./PilotsList";
 import PilotDetails from "./PilotDetails";
 
-const pilots = [
-    {
-        name : "Natasha Kerensky",
-        rank : "Captain",
-        age : 52,
-        gunnery : 2,
-        piloting : 3,
-        mechType : "WHM-6R",
-    }
-];
 
-class Pilots extends Component {
-    state = {
-        pilots : pilots,
-    }
+const mapState = (state) => {
 
+    const session =  orm.session(state.entities);
+
+    const {Pilot} = session;
+
+    const pilots = Pilot.all().toModelArray().map(pilotModel => {
+
+        const pilot = {
+            ...pilotModel.ref
+        };
+
+        const {mech} = pilotModel;
+
+        if(mech && mech.type) {
+            pilot.mechType = mech.type.id;
+        }
+
+        return pilot;
+    });
+
+
+    return {pilots};
+}
+
+
+export class Pilots extends Component {
     render() {
-        const {pilots} = this.state;
+        const {pilots = []} = this.props;
 
-        // Use the first pilot as the "current" one for display, if available.
         const currentPilot = pilots[0] || {};
 
         return (
@@ -51,4 +64,4 @@ class Pilots extends Component {
     }
 }
 
-export default Pilots
+export default connect(mapState)(Pilots);
