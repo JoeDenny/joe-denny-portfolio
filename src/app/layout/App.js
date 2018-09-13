@@ -12,6 +12,10 @@ import Pilots from "features/pilots/Pilots";
 import Mechs from "features/mechs/Mechs";
 import UnitOrganization from "features/unitOrganization/UnitOrganization";
 import Tools from "features/tools/Tools";
+import ModalManager from "features/modals/ModalManager";
+import ContextMenuManager from "features/contextMenus/ContextMenuManager";
+
+
 
 
 class App extends Component {
@@ -26,8 +30,11 @@ class App extends Component {
 
         return (
             <div className="App">
+                <ModalManager />
+                <ContextMenuManager />
                 <div className="App-header">
-                    <Header inverted as="h1">Project Mini-Mek</Header>
+                    <Header inverted as="h1">Example React+Redux App</Header>
+                    <p>Go to tools > click on Load Data button</p>
                 </div>
                 <Container>
                     <TabBarContainer tabs={tabs} size="massive" />
